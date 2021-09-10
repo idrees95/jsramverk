@@ -1,0 +1,240 @@
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.background {
+  background-image: url(background.jpg);
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5em;
+  text-align: center;
+  /* background-color: yellow; */
+}
+
+.header {
+  padding: 25px 0;
+  text-align: center;
+  /* background: #222; */
+}
+.header img {
+  width: 100px;
+  height: 13px;
+}
+
+.editor {
+  margin-right: 10em;
+  
+}
+
+.ck-editor__editable_inline {
+  min-height: 500px;
+  
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  margin-left: 8%;
+  margin-top: -1%;
+}
+
+.btnclass {
+  margin-left: 42%;
+  margin-top: 1em;
+  padding: 1em 10em;
+}
+
+.editorName {
+    font-family: 'Brush Script MT', cursive;
+    font-size: small;
+    margin-right: -4px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.namefooter {
+    text-align: center;
+    font-weight: bolder;
+    // margin-top: -2em;
+    color: rgb(250, 250, 250);
+}
+
+.copyright {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: -1em;
+    color: rgb(250, 250, 250);
+}
+
+.header {
+  // position: absolute;
+  // transform: translate(-50%, -50%);
+  // top: 40%;
+  // left: 50%;
+}
+
+.header2 {
+  // color: rgb(223, 191, 191);
+  // position: relative;
+  // font-size: 9vw;
+  // // margin: 70px 200px;
+  // animation: glitch 5s 5s infinite;
+    color: #dfbfbf;
+    position: relative;
+    font-size: 4em;
+    animation: glitch 5s 5s infinite;
+}
+
+// .header2::before {
+//   content: attr(data-text);
+//   position: absolute;
+//   left: -2px;
+//   text-shadow: -5px 0 magenta;
+//   background: black;
+//   overflow: hidden;
+//   top: 0;
+//   animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+// }
+
+// .header2::after {
+//   content: attr(data-text);
+//   position: absolute;
+//   left: 2px;
+//   text-shadow: -5px 0 lightgreen;
+//   background: black;
+//   overflow: hidden;
+//   top: 0;
+//   animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+// }
+
+// @keyframes glitch {
+//   1%{
+//     transform: rotateX(10deg) skewX(90deg);
+//   }
+//   2%{
+//     transform: rotateX(0deg) skewX(0deg);
+//   }
+// }
+
+// @keyframes noise-1 {
+//   $steps: 30;
+//   @for $i from 1 through $steps {
+//     #{percentage($i*(1/$steps))} {
+//       $top: random(100);
+//       $bottom: random(101 - $top);
+//       clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+//     }
+//   }
+// }
+
+// @keyframes noise-2 {
+//   $steps: 30;
+//   @for $i from 0 through $steps {
+//     #{percentage($i*(1/$steps))} {
+//       $top: random(100);
+//       $bottom: random(101 - $top);
+//       clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+//     }
+//   }
+// }
+
+.scanlines {
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) .5%,
+    transparent 1%
+  );
+
+  animation: fudge 7s ease-in-out alternate infinite;
+}
+
+
+@keyframes fudge {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, 2%);
+  }
+}
+
+.glow {
+  @extend .header2;
+  text-shadow: 0 0 1000px rgb(223, 191, 191);
+  color: transparent;
+  position: absolute;
+  top: 0;
+}
+
+.header3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: .8vw;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  text-align: center;
+  left: 35%;
+  animation: glitch-2 5s 5.02s infinite;
+  text-decoration: underline;
+}
+
+@keyframes glitch-2 {
+  1%{
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
